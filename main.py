@@ -77,7 +77,8 @@ def entrenar(theta, fac_ap, w1, w2, epochs, x1, x2, d, n_muestras):
 
     return w1, w2, epochs, theta
 
-if __name__ == '__main__':
+
+def main():
     #Leer archivo excel
     file = pd.read_excel("perceptron_data.xlsx")
     theta = 0.4
@@ -90,5 +91,10 @@ if __name__ == '__main__':
     x2 = file["x2"]
     d = file ["d"]
     n_muestras = len(d)
+    
     w1, w2, epochs, theta = entrenar(theta, fac_ap, w1, w2, epochs, x1, x2, d, n_muestras)
-    print(f"W1 = {w1}\nW2 = {w2}\nTheta = {theta}\nEpochs = {epochs}") 
+    print(f"W1 = {w1}\nW2 = {w2}\nTheta = {theta}\nEpochs = {epochs}")
+
+if __name__ == '__main__':
+    main()
+     
